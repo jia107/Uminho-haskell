@@ -42,7 +42,7 @@ movetwo (x, y) (Oeste) (c) = if (x<c && y<c) then (x - 1, y) else error "fora da
 
 
 
---7
+--7 demonstracao
 
 data Figura
   = Circulo Ponto Double      -- centro, raio
