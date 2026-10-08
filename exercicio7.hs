@@ -1,6 +1,6 @@
 type Ponto = (Double, Double)
 
-data Figura 
+data Figura
     = Circulo Ponto Double
     | Retangulo Ponto Ponto
     | Quadrado Ponto Double deriving (Show,Eq)
@@ -9,14 +9,22 @@ data Figura
 
 dentro :: Ponto -> Figura -> Bool
 
-dentro (px, py) (Circulo (cx, cy) raio) = distanciaAoCentro <= raio
-  where
-    distanciaAoCentro = sqrt ((px - cx) ** 2 + (py - cy) ** 2)
+dentro (x, y) (Circulo (cx, cy) r)
+  = ((cx - x) ** 2 + (cy - y) ** 2) <= (r ** 2)
 
-dentro (px, py) (Retangulo (ex, ey) (dx, dy)) = entre ex dx px && entre dy ey py
+dentro (x, y) (Retangulo (x1, y1)(x2, y2))
+  = x >= x1 && x <= x2 && y <= y1 && y >= y2
 
-dentro (px, py) (Quadrado (qx, qy) lado) = px <= (qx + lado) && py >= (qy - lado) && px >= (qx) && py <= (qy)
+dentro (x, y) (Quadrado (x1, y1) l)
+  = x >= x1 && x <= x1 + l && y <= y1 && y >= y1 - l
 
---auxiliar
-entre :: Double -> Double -> Double -> Bool
-entre minimo maximo meio = minimo <= meio && meio <= maximo
+--7b
+
+menorQuadrado :: Figura -> Figura
+
+menorQuadrado (Circulo (cx, cy) r)
+  = Quadrado (cx - r, cy + r) (2 * r)
+
+
+-- fica se por aqui, tenho preguica, acabou o ex 7
+-- hora de avancar
