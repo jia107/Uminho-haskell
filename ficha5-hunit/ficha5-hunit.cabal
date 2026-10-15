@@ -71,7 +71,7 @@ executable ficha5-hunit
 
     -- Base language which the package is written in.
     default-language: Haskell2010
-    
+
 
     --adicionado a mao
 test-suite exemplo2-tests
