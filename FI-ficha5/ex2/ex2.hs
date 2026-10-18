@@ -1,4 +1,4 @@
-module Exemplo2 where
+module Ex2 where
 
 mydiv :: Float -> Float -> Float
 mydiv x y = x / y
