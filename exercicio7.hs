@@ -28,3 +28,4 @@ menorQuadrado (Circulo (cx, cy) r)
 
 -- fica se por aqui, tenho preguica, acabou o ex 7
 -- hora de avancar
+-- tem na LI-ficha2
