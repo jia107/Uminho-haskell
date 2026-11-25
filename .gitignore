@@ -1,1 +1,13 @@
+# cabal 编译输出
 dist-newstyle/
+cabal.project.local*
+.ghc.environment.*
+
+# stack 编译输出
+.stack-work/
+
+# 直接用 ghc 编译 .hs 产生的中间文件
+*.o
+*.hi
+*.dyn_o
+*.dyn_hi
